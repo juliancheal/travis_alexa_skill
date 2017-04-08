@@ -3,11 +3,11 @@ require 'json'
 
 interaction_model = AlexaGenerator::InteractionModel.build do |model|
   model.add_intent(:travis) do |intent|
-    intent.add_slot(:tests, AlexaGenerator::Slot::SlotType::LITERAL) do |slot|
+    intent.add_slot(:repos, AlexaGenerator::Slot::SlotType::LITERAL) do |slot|
       slot.add_bindings(*%w())
     end
 
-    intent.add_utterance_template('what is {tests} status')
+    intent.add_utterance_template('what is {repos} status')
   end
 end
 
